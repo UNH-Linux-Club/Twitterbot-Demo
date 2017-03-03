@@ -74,6 +74,9 @@ class StreamListener(tweepy.StreamListener):
                 except:
                     ret = "Error evaluating expression!"
                 sendDM(user, ret)
+            elif (words[0] == "play"):
+                if (words[1] == "journey"):
+                    system("cvlc http://birch.ethanjs.com/Stone-In-Love.mp4")
             else:
                 runHelp(user, "Unknown command")
 
