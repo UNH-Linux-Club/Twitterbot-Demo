@@ -4,6 +4,8 @@ import json
 import time
 import ast
 
+from subprocess import call
+
 print("Starting twitter bot!")
 
 CONSUMER_KEY = ""
@@ -76,7 +78,7 @@ class StreamListener(tweepy.StreamListener):
                 sendDM(user, ret)
             elif (words[0] == "play"):
                 if (words[1] == "journey"):
-                    system("cvlc http://birch.ethanjs.com/Stone-In-Love.mp4")
+                    call(["cvlc", "http://birch.ethanjs.com/Stone-In-Love.mp4"])
             else:
                 runHelp(user, "Unknown command")
 
